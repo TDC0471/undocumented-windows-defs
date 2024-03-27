@@ -1,0 +1,19 @@
+[package]
+name = "untitled"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tl = "0.7.8"
+tokio = { version = "1.36.0", features = ["rt", "rt-multi-thread", "macros", "fs"] }
+serde = { version = "1.0.197", features = ["derive"] }
+reqwest = "0.12.2"
+fs = "0.0.5"
+scraper = "0.19.0"
+full = "0.1.0"
+futures = "0.1.31"
+select = "0.6.0"
+tokio-fs = "0.1.7"
+futures-util = "0.3.30"

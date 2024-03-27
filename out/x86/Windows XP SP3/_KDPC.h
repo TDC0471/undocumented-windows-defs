@@ -1,0 +1,29 @@
+#pragma once
+/* ------------------ */
+
+#include <_LIST_ENTRY.h>
+#include <_KDPC.h>
+
+//0x20 bytes (sizeof)
+struct _KDPC
+{
+    SHORT Type;                                                             //0x0
+    UCHAR Number;                                                           //0x2
+    UCHAR Importance;                                                       //0x3
+    struct _LIST_ENTRY DpcListEntry;                                        //0x4
+    VOID (*DeferredRoutine)(struct _KDPC* arg1, VOID* arg2, VOID* arg3, VOID* arg4); //0xc
+    VOID* DeferredContext;                                                  //0x10
+    VOID* SystemArgument1;                                                  //0x14
+    VOID* SystemArgument2;                                                  //0x18
+    ULONG* Lock;                                                            //0x1c
+};
+/* Used in */
+// _DEVICE_OBJECT
+// _ETIMER
+// _KDPC
+// _KPRCB
+// _KTIMER
+// _POP_THERMAL_ZONE
+// _PROCESSOR_POWER_STATE
+// _WAIT_CONTEXT_BLOCK
+

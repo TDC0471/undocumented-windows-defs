@@ -1,0 +1,14 @@
+#pragma once
+/* ------------------ */
+
+#include <_GENERAL_LOOKASIDE.h>
+
+//0xc0 bytes (sizeof)
+struct _NPAGED_LOOKASIDE_LIST
+{
+    struct _GENERAL_LOOKASIDE L;                                            //0x0
+    ULONG Lock__ObsoleteButDoNotDelete;                                     //0x80
+};
+/* Used in */
+// _MI_SYSTEM_PTE_STATE
+

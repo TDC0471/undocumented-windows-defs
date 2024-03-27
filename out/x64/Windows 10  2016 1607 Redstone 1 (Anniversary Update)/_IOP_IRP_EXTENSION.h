@@ -1,0 +1,33 @@
+#pragma once
+/* ------------------ */
+
+#include <_GUID.h>
+#include <_LARGE_INTEGER.h>
+#include <_IO_IRP_EXT_TRACK_OFFSET_HEADER.h>
+
+//0x38 bytes (sizeof)
+struct _IOP_IRP_EXTENSION
+{
+    union
+    {
+        USHORT ExtensionFlags;                                              //0x0
+        struct
+        {
+            USHORT Allocated:1;                                             //0x0
+            USHORT PropagateId:1;                                           //0x0
+            USHORT SpareBits:14;                                            //0x0
+        };
+    };
+    USHORT TypesAllocated;                                                  //0x2
+    UCHAR GenericExtension[4];                                              //0x4
+    VOID* VerifierContext;                                                  //0x8
+    ULONGLONG DiskIoAttributionHandle;                                      //0x10
+    struct _GUID ActivityId;                                                //0x18
+    union
+    {
+        union _LARGE_INTEGER Timestamp;                                     //0x28
+        ULONG ZeroingOffset;                                                //0x28
+        struct _IO_IRP_EXT_TRACK_OFFSET_HEADER* FsTrackOffsetBlob;          //0x28
+    };
+    LONGLONG FsTrackedOffset;                                               //0x30
+};

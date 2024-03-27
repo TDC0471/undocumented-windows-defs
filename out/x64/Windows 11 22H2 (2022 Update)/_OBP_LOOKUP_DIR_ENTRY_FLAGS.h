@@ -1,0 +1,13 @@
+#pragma once
+/* ------------------ */
+
+
+//0x4 bytes (sizeof)
+enum _OBP_LOOKUP_DIR_ENTRY_FLAGS
+{
+    OBP_LOOKUP_SEARCH_SHADOW = 1,
+    OBP_LOOKUP_IS_SANDBOXED = 2,
+    OBP_LOOKUP_IS_NOT_SANDBOXED = 4,
+    OBP_LOOKUP_SANDBOX_COMPUTED = 6,
+    OBP_LOOKUP_CASE_INSENSITIVE = 64
+};

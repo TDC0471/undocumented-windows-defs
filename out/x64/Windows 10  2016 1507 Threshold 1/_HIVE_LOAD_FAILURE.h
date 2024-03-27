@@ -1,0 +1,73 @@
+#pragma once
+/* ------------------ */
+
+#include <_HHIVE.h>
+#include <_CM_LOAD_FAILURE_TYPE.h>
+#include <_CELL_DATA.h>
+#include <_HBIN.h>
+#include <_HCELL.h>
+
+//0x160 bytes (sizeof)
+struct _HIVE_LOAD_FAILURE
+{
+    struct _HHIVE* Hive;                                                    //0x0
+    ULONG Index;                                                            //0x8
+    ULONG RecoverableIndex;                                                 //0xc
+    struct
+    {
+        enum _CM_LOAD_FAILURE_TYPE Failure;                                 //0x10
+        LONG Status;                                                        //0x14
+        ULONG Point;                                                        //0x18
+    } Locations[8];                                                         //0x10
+    struct
+    {
+        enum _CM_LOAD_FAILURE_TYPE Failure;                                 //0x70
+        LONG Status;                                                        //0x74
+        ULONG Point;                                                        //0x78
+    } RecoverableLocations[8];                                              //0x70
+    struct
+    {
+        ULONG Action;                                                       //0xd0
+        VOID* Handle;                                                       //0xd8
+        LONG Status;                                                        //0xe0
+    } RegistryIO;                                                           //0xd0
+    struct
+    {
+        VOID* CheckStack;                                                   //0xe8
+    } CheckRegistry2;                                                       //0xe8
+    struct
+    {
+        ULONG Cell;                                                         //0xf0
+        struct _CELL_DATA* CellPoint;                                       //0xf8
+        VOID* RootPoint;                                                    //0x100
+        ULONG Index;                                                        //0x108
+    } CheckKey;                                                             //0xf0
+    struct
+    {
+        struct _CELL_DATA* List;                                            //0x110
+        ULONG Index;                                                        //0x118
+        ULONG Cell;                                                         //0x11c
+        struct _CELL_DATA* CellPoint;                                       //0x120
+    } CheckValueList;                                                       //0x110
+    struct
+    {
+        ULONG Space;                                                        //0x128
+        ULONG MapPoint;                                                     //0x12c
+        struct _HBIN* BinPoint;                                             //0x130
+    } CheckHive;                                                            //0x128
+    struct
+    {
+        ULONG Space;                                                        //0x138
+        ULONG MapPoint;                                                     //0x13c
+        struct _HBIN* BinPoint;                                             //0x140
+    } CheckHive1;                                                           //0x138
+    struct
+    {
+        struct _HBIN* Bin;                                                  //0x148
+        struct _HCELL* CellPoint;                                           //0x150
+    } CheckBin;                                                             //0x148
+    struct
+    {
+        ULONG FileOffset;                                                   //0x158
+    } RecoverData;                                                          //0x158
+};

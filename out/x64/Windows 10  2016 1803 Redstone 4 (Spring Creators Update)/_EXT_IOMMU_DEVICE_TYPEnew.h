@@ -1,0 +1,18 @@
+#pragma once
+/* ------------------ */
+
+
+//0x4 bytes (sizeof)
+enum _EXT_IOMMU_DEVICE_TYPE
+{
+    EXT_IOMMU_DEVICE_TYPE_INVALID = 0,
+    EXT_IOMMU_DEVICE_TYPE_PCI = 1,
+    EXT_IOMMU_DEVICE_TYPE_ACPI = 2,
+    EXT_IOMMU_DEVICE_TYPE_IOAPIC = 3,
+    EXT_IOMMU_DEVICE_TYPE_LOGICAL = 4,
+    EXT_IOMMU_DEVICE_TYPE_TEST = 5,
+    EXT_IOMMU_DEVICE_TYPE_MAX = 6
+};
+/* Used in */
+// _EXT_IOMMU_DEVICE_ID
+

@@ -1,0 +1,12 @@
+#pragma once
+/* ------------------ */
+
+
+//0x4 bytes (sizeof)
+enum _PERIODIC_FLUSH_FREQUENCY
+{
+    PERIODIC_FLUSH_FREQUENCY_NONE = 0,
+    PERIODIC_FLUSH_FREQUENCY_NORMAL = 1,
+    PERIODIC_FLUSH_FREQUENCY_HIGH = 2,
+    PERIODIC_FLUSH_FREQUENCY_COUNT = 3
+};

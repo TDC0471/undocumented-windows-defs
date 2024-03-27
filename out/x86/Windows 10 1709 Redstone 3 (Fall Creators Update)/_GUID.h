@@ -1,0 +1,58 @@
+#pragma once
+/* ------------------ */
+
+
+//0x10 bytes (sizeof)
+struct _GUID
+{
+    ULONG Data1;                                                            //0x0
+    USHORT Data2;                                                           //0x4
+    USHORT Data3;                                                           //0x6
+    UCHAR Data4[8];                                                         //0x8
+};
+/* Used in */
+// _AGGREGATED_PAYLOAD_FILTER
+// _AUX_ACCESS_DATA
+// _CM_KEY_BODY
+// _CM_TRANS
+// _CRITICAL_PROCESS_EXCEPTION_DATA
+// _DEVICE_NODE
+// _DISALLOWED_GUIDS
+// _DUMP_INITIALIZATION_CONTEXT
+// _EJOB
+// _ETHREAD
+// _ETWP_NOTIFICATION_HEADER
+// _ETW_DECODE_CONTROL_ENTRY
+// _ETW_GUID_ENTRY
+// _ETW_SILODRIVERSTATE
+// _ETW_WMITRACE_WORK
+// _EVENT_HEADER
+// _HBASE_BLOCK
+// _IOP_IRP_EXTENSION
+// _IO_STACK_LOCATION
+// _IO_WORKITEM
+// _KENLISTMENT
+// _KRESOURCEMANAGER
+// _KTM
+// _KTRANSACTION
+// _NONOPAQUE_OPLOCK
+// _PERIODIC_CAPTURE_STATE_GUIDS
+// _PLUGPLAY_EVENT_BLOCK
+// _PNP_DEVICE_ACTION_ENTRY
+// _PNP_DEVICE_EVENT_ENTRY
+// _POP_FX_COMPONENT
+// _POP_FX_DRIVER_CALLBACKS
+// _POP_PPM_PROFILE
+// _RSDS
+// _TEB
+// _TEB32
+// _TEB64
+// _TRACE_LOGFILE_HEADER
+// _TlgProviderMetadata_t
+// _TlgProvider_t
+// _WHEA_ERROR_PACKET_V2
+// _WHEA_ERROR_RECORD_HEADER
+// _WHEA_ERROR_RECORD_SECTION_DESCRIPTOR
+// _WMI_LOGGER_CONTEXT
+// tagSWITCH_CONTEXT_DATA
+

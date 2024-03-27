@@ -1,0 +1,28 @@
+#pragma once
+/* ------------------ */
+
+#include <_WHEA_ERROR_STATUS.h>
+
+//0x50 bytes (sizeof)
+struct _WHEA_MEMORY_ERROR
+{
+    ULONGLONG ValidationBits;                                               //0x0
+    struct _WHEA_ERROR_STATUS ErrorStatus;                                  //0x8
+    ULONGLONG PhysicalAddress;                                              //0x10
+    ULONGLONG PhysicalAddressMask;                                          //0x18
+    USHORT Node;                                                            //0x20
+    USHORT Card;                                                            //0x22
+    USHORT Module;                                                          //0x24
+    USHORT Bank;                                                            //0x26
+    USHORT Device;                                                          //0x28
+    USHORT Row;                                                             //0x2a
+    USHORT Column;                                                          //0x2c
+    USHORT BitPosition;                                                     //0x2e
+    ULONGLONG RequestorId;                                                  //0x30
+    ULONGLONG ResponderId;                                                  //0x38
+    ULONGLONG TargetId;                                                     //0x40
+    UCHAR ErrorType;                                                        //0x48
+};
+/* Used in */
+// _WHEA_ERROR_PACKET
+

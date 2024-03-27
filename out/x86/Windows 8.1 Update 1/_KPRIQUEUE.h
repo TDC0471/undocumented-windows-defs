@@ -1,0 +1,18 @@
+#pragma once
+/* ------------------ */
+
+#include <_DISPATCHER_HEADER.h>
+#include <_LIST_ENTRY.h>
+
+//0x19c bytes (sizeof)
+struct _KPRIQUEUE
+{
+    struct _DISPATCHER_HEADER Header;                                       //0x0
+    struct _LIST_ENTRY EntryListHead[32];                                   //0x10
+    volatile LONG CurrentCount[32];                                         //0x110
+    ULONG MaximumCount;                                                     //0x190
+    struct _LIST_ENTRY ThreadListHead;                                      //0x194
+};
+/* Used in */
+// _EX_WORK_QUEUE
+

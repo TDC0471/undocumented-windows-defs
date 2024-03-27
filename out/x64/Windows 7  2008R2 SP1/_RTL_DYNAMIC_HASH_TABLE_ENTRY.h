@@ -1,0 +1,14 @@
+#pragma once
+/* ------------------ */
+
+#include <_LIST_ENTRY.h>
+
+//0x18 bytes (sizeof)
+struct _RTL_DYNAMIC_HASH_TABLE_ENTRY
+{
+    struct _LIST_ENTRY Linkage;                                             //0x0
+    ULONGLONG Signature;                                                    //0x10
+};
+/* Used in */
+// _RTL_DYNAMIC_HASH_TABLE_ENUMERATOR
+

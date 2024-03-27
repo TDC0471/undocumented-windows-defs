@@ -1,0 +1,27 @@
+#pragma once
+/* ------------------ */
+
+#include <_MMSESSION.h>
+#include <_EX_PUSH_LOCK.h>
+#include <_EPROCESS.h>
+#include <_MMWSL_INSTANCE.h>
+
+//0x103c bytes (sizeof)
+struct _MI_SESSION_STATE
+{
+    struct _MMSESSION SystemSession;                                        //0x0
+    ULONG DetachTimeStamp;                                                  //0x14
+    UCHAR CodePageEdited;                                                   //0x18
+    ULONG* DynamicPoolBitBuffer;                                            //0x1c
+    LONG VaReferenceCount[1024];                                            //0x20
+    ULONG* DynamicPtesBitBuffer;                                            //0x1020
+    struct _EX_PUSH_LOCK IdLock;                                            //0x1024
+    struct _EPROCESS* LeaderProcess;                                        //0x1028
+    struct _EX_PUSH_LOCK InitializeLock;                                    //0x102c
+    struct _MMWSL_INSTANCE* WorkingSetList;                                 //0x1030
+    VOID* SessionBase;                                                      //0x1034
+    VOID* SessionCore;                                                      //0x1038
+};
+/* Used in */
+// _MI_SYSTEM_INFORMATION
+

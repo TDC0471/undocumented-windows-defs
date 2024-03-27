@@ -1,0 +1,84 @@
+#pragma once
+/* ------------------ */
+
+#include <_NT_TIB32.h>
+#include <_CLIENT_ID32.h>
+#include <_GDI_TEB_BATCH32.h>
+#include <_STRING32.h>
+#include <LIST_ENTRY32.h>
+
+//0xfbc bytes (sizeof)
+struct _TEB32
+{
+    struct _NT_TIB32 NtTib;                                                 //0x0
+    ULONG EnvironmentPointer;                                               //0x1c
+    struct _CLIENT_ID32 ClientId;                                           //0x20
+    ULONG ActiveRpcHandle;                                                  //0x28
+    ULONG ThreadLocalStoragePointer;                                        //0x2c
+    ULONG ProcessEnvironmentBlock;                                          //0x30
+    ULONG LastErrorValue;                                                   //0x34
+    ULONG CountOfOwnedCriticalSections;                                     //0x38
+    ULONG CsrClientThread;                                                  //0x3c
+    ULONG Win32ThreadInfo;                                                  //0x40
+    ULONG User32Reserved[26];                                               //0x44
+    ULONG UserReserved[5];                                                  //0xac
+    ULONG WOW32Reserved;                                                    //0xc0
+    ULONG CurrentLocale;                                                    //0xc4
+    ULONG FpSoftwareStatusRegister;                                         //0xc8
+    ULONG SystemReserved1[54];                                              //0xcc
+    LONG ExceptionCode;                                                     //0x1a4
+    ULONG ActivationContextStackPointer;                                    //0x1a8
+    UCHAR SpareBytes1[40];                                                  //0x1ac
+    struct _GDI_TEB_BATCH32 GdiTebBatch;                                    //0x1d4
+    struct _CLIENT_ID32 RealClientId;                                       //0x6b4
+    ULONG GdiCachedProcessHandle;                                           //0x6bc
+    ULONG GdiClientPID;                                                     //0x6c0
+    ULONG GdiClientTID;                                                     //0x6c4
+    ULONG GdiThreadLocalInfo;                                               //0x6c8
+    ULONG Win32ClientInfo[62];                                              //0x6cc
+    ULONG glDispatchTable[233];                                             //0x7c4
+    ULONG glReserved1[29];                                                  //0xb68
+    ULONG glReserved2;                                                      //0xbdc
+    ULONG glSectionInfo;                                                    //0xbe0
+    ULONG glSection;                                                        //0xbe4
+    ULONG glTable;                                                          //0xbe8
+    ULONG glCurrentRC;                                                      //0xbec
+    ULONG glContext;                                                        //0xbf0
+    ULONG LastStatusValue;                                                  //0xbf4
+    struct _STRING32 StaticUnicodeString;                                   //0xbf8
+    USHORT StaticUnicodeBuffer[261];                                        //0xc00
+    ULONG DeallocationStack;                                                //0xe0c
+    ULONG TlsSlots[64];                                                     //0xe10
+    struct LIST_ENTRY32 TlsLinks;                                           //0xf10
+    ULONG Vdm;                                                              //0xf18
+    ULONG ReservedForNtRpc;                                                 //0xf1c
+    ULONG DbgSsReserved[2];                                                 //0xf20
+    ULONG HardErrorMode;                                                    //0xf28
+    ULONG Instrumentation[14];                                              //0xf2c
+    ULONG SubProcessTag;                                                    //0xf64
+    ULONG EtwTraceData;                                                     //0xf68
+    ULONG WinSockData;                                                      //0xf6c
+    ULONG GdiBatchCount;                                                    //0xf70
+    UCHAR InDbgPrint;                                                       //0xf74
+    UCHAR FreeStackOnTermination;                                           //0xf75
+    UCHAR HasFiberData;                                                     //0xf76
+    UCHAR IdealProcessor;                                                   //0xf77
+    ULONG GuaranteedStackBytes;                                             //0xf78
+    ULONG ReservedForPerf;                                                  //0xf7c
+    ULONG ReservedForOle;                                                   //0xf80
+    ULONG WaitingOnLoaderLock;                                              //0xf84
+    ULONG SparePointer1;                                                    //0xf88
+    ULONG SoftPatchPtr1;                                                    //0xf8c
+    ULONG SoftPatchPtr2;                                                    //0xf90
+    ULONG TlsExpansionSlots;                                                //0xf94
+    ULONG ImpersonationLocale;                                              //0xf98
+    ULONG IsImpersonating;                                                  //0xf9c
+    ULONG NlsCache;                                                         //0xfa0
+    ULONG pShimData;                                                        //0xfa4
+    ULONG HeapVirtualAffinity;                                              //0xfa8
+    ULONG CurrentTransactionHandle;                                         //0xfac
+    ULONG ActiveFrame;                                                      //0xfb0
+    ULONG FlsData;                                                          //0xfb4
+    UCHAR SafeThunkCall;                                                    //0xfb8
+    UCHAR BooleanSpare[3];                                                  //0xfb9
+};

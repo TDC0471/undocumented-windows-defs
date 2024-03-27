@@ -1,0 +1,10 @@
+#pragma once
+/* ------------------ */
+
+
+//0x4 bytes (sizeof)
+enum _JOBOBJECT_PAGE_PRIORITY_LIMIT_FLAGS
+{
+    JOBOBJECT_PAGE_PRIORITY_LIMIT_ENABLE = 1,
+    JOBOBJECT_PAGE_PRIORITY_LIMIT_VALID_FLAGS = 1
+};
